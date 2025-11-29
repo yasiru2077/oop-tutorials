@@ -9,6 +9,9 @@ public class Main {
 
         Second.myStaticMethod();
 
+        Student student1 = new Student();
+
+        student1.study();
 
     }
 
@@ -32,6 +35,27 @@ class Second {
         System.out.println("Static methods can be called without creating objects");
     }
 
+
+
+
+
+}
+
+abstract class Third {
+
+    public String fname = "john";
+    public int age = 25;
+    public abstract void study();
+
+}
+
+class Student extends Third {
+
+    public int graduationYear = 2018;
+
+    public void study(){
+        System.out.println("name: "+fname+" age: "+age+" graduation year: "+graduationYear);
+    }
 
 
 }

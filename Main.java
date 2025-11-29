@@ -7,6 +7,8 @@ public class Main {
         System.out.println("enemy is: "+enemy.enemyName + ". enemy level is: "+enemy.enemyLevel);
         System.out.println("enemy is: "+enemy2.enemyName + ". enemy level is: "+enemy2.enemyLevel);
 
+        Second.myStaticMethod();
+
 
     }
 
@@ -25,4 +27,11 @@ class Second {
         this.enemyLevel = enemyLevel;
         this.enemyName = enemyName;
     }
+
+    static void myStaticMethod(){
+        System.out.println("Static methods can be called without creating objects");
+    }
+
+
+
 }

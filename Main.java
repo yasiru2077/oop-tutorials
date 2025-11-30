@@ -13,6 +13,10 @@ public class Main {
 
         student1.study();
 
+        enemy2.setHealth(200);
+        System.out.println("enemy health is: "+enemy2.getHealth());
+
+
     }
 
 }
@@ -21,6 +25,16 @@ class Second {
 
     int enemyLevel;
     String enemyName;
+
+    private int health = 100;
+
+    public int getHealth(){
+        return health;
+    }
+
+    public void setHealth(int newHealth){
+        this.health=newHealth;
+    }
 
     public Second() {
         this(24,"caviar");
@@ -34,10 +48,6 @@ class Second {
     static void myStaticMethod(){
         System.out.println("Static methods can be called without creating objects");
     }
-
-
-
-
 
 }
 

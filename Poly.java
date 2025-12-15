@@ -1,30 +1,37 @@
+
 class Animal {
-
-    protected String name, sound, action;
-    public Animal(String name,String sound,String action){
-        this.name=name;
-        this.sound=sound;
-        this.action=action;
-    }
-
     public void action(){
-
-        System.out.println(name + " is "+ action);
-
+        System.out.println("animal is going something!");
     }
-
-    public void speak(){
-
-        System.out.println(name + " is" + sound);
-
-    }
-
 }
+
+class Dog extends Animal{
+    @Override
+    public void action(){
+        System.out.println("Dog is peeing to a fence!");
+    }
+}
+
+class Cat extends Animal {
+
+    @Override
+    public void action(){
+        System.out.println("Cat is caching mice!");
+    }
+}
+
 
 
 public class Poly {
 
     public static void main(String[] args) {
+        Animal generic = new Animal();
+        generic.action();
+        Animal dog = new Dog();
+        dog.action();
+        Animal cat = new Cat();
+        cat.action();
+
 
     }
 

@@ -2,14 +2,14 @@ package zoo.Animals;
 
 public abstract class Animals {
 
-private String name;
-private int age;
+    private String name;
+    private int age;
 
-private String species;
+    private String species;
 
-protected String habitat;
+    protected String habitat;
 
-public  static final String PLANET = "Earth";
+    public static final String PLANET = "Earth";
 
 
     public Animals(String name, int age, String species, String habitat) {
@@ -19,51 +19,50 @@ public  static final String PLANET = "Earth";
         this.habitat = habitat;
     }
 
-    private void breathe(){
+    private void breathe() {
         System.out.println(name + " is breathing...");
     }
 
-    public abstract  void makeSound();
+    public abstract void makeSound();
+
     public abstract void eat();
 
-    public void displayInfo(){
+    public void displayInfo() {
         breathe();
-        System.out.println("Name: "+ name +", Age: "+ age +", Species: "+ species +", Habitat: "+ habitat + ", From planet: " + PLANET);
+        System.out.println("Name: " + name + ", Age: " + age + ", Species: " + species + ", Habitat: " + habitat + ", From planet: " + PLANET);
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getAge(){
+    public int getAge() {
         return age;
     }
 
-    public void setAge(int age){
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public String getSpecies(){
+    public String getSpecies() {
         return species;
     }
 
-    public void setSpecies(String species){
+    public void setSpecies(String species) {
         this.species = species;
     }
 
-    public String getHabitat(){
+    public String getHabitat() {
         return habitat;
     }
 
-    public void setHabitat(String habitat){
+    public void setHabitat(String habitat) {
         this.habitat = habitat;
     }
-
-
 
 
 }

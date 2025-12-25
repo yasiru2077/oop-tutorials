@@ -9,6 +9,12 @@ public abstract class Bird extends Animals {
         this.wingSpan = wingSpan;
     }
 
+    public double getWingSpan(){
+        return wingSpan;
+    }
 
+    public void setWingSpan(double wingSpan){
+        this.wingSpan = wingSpan;
+    }
 
 }

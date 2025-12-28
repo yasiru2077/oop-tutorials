@@ -35,7 +35,6 @@ public class ZooTester {
 
         System.out.println("Polymorphism demo with Animal array:");
         Animals[] allAnimals = {leo, jumbo, pingu, sky, sly, cozy};
-
         for (Animals a : allAnimals) {
             a.makeSound();
         }
@@ -43,6 +42,8 @@ public class ZooTester {
         zoo.openZoo();
         zoo.feedAllAnimals();
         zoo.showAllEnclosures();
+
+
 
     }
 

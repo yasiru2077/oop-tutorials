@@ -38,10 +38,6 @@ public class Enclosure {
         return animals;
     }
 
-    public String getType(){
-        return type;
-    }
-
 
 
 

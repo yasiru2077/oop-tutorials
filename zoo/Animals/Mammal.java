@@ -7,4 +7,12 @@ public abstract class Mammal extends Animal {
         super(name, age, species, habitat);
         this.hasFur = hasFur;
     }
+
+    public boolean isHasFur() {
+        return hasFur;
+    }
+
+    public void setHasFur(boolean hasFur) {
+        this.hasFur = hasFur;
+    }
 }

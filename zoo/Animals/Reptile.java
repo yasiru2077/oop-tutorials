@@ -1,13 +1,20 @@
 package zoo.Animals;
 
 public abstract class Reptile extends  Animal{
-    private boolean vanomous;
+    private boolean venomous;
 
-    public Reptile(String name, int age, String species, String habitat, boolean vanomous) {
+    public Reptile(String name, int age, String species, String habitat, boolean venomous) {
         super(name, age, species, habitat);
-        this.vanomous = vanomous;
+        this.venomous = venomous;
     }
 
+    public boolean isVenomous() {
+        return venomous;
+    }
+
+    public void setVenomous(boolean venomous) {
+        this.venomous = venomous;
+    }
 }
 
 

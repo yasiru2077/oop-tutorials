@@ -40,14 +40,12 @@ public class Enclosure {
         this.animals = animals;
     }
 
-    public boolean addAnimal(Animal a) {
+    public void addAnimal(Animal a) {
 
         if (animals.size() < capacity) {
             animals.add(a);
-            return true;
         } else {
             System.out.println("Enclosure is already full.");
-            return false;
         }
 
     }

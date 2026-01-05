@@ -8,7 +8,6 @@ public class EBook extends Book {
         this.fileSizeMB = fileSizeMB;
     }
 
-
     public double getFileSizeMB() {
         return fileSizeMB;
     }
@@ -19,6 +18,11 @@ public class EBook extends Book {
 
     @Override
     public String getProductType() {
-        return null;
+        return "E-Book";
+    }
+
+    @Override
+    public String getDeliveryInfo() {
+        return "Instant digital download";
     }
 }

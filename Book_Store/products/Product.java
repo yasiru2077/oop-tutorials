@@ -19,8 +19,9 @@ public abstract class Product {
     public abstract String getProductType();
     public abstract String getDeliveryInfo();
 
-    public void displayBasicInfo(){
-        System.out.println("title:"+title+" ,isbn:"+isbn+" ,price:"+price+", year"+yearPublished+", publisher"+publisher);
+    public void displayBasicInfo() {
+        System.out.printf("Title: %-30s | ISBN: %-13s | Price: $%6.2f | Year: %d | Publisher: %s%n",
+                title, isbn, price, yearPublished, publisher);
     }
 
     public String getTitle() {

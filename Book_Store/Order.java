@@ -13,7 +13,7 @@ public class Order {
     private List<Product> items;
     private double totalPrice;
 
-    public Order(String orderId, Customer customer, double totalPrice,List<Product> items) {
+    public Order(String orderId, Customer customer,List<Product> items) {
         this.orderId = orderId;
         this.customer = customer;
         this.items = new ArrayList<>(items);
@@ -29,27 +29,11 @@ public class Order {
     }
 
     public List<Product> getItems() {
-        return items;
+        return new ArrayList<>(items);
     }
 
     public double getTotalPrice() {
         return totalPrice;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public void setItems(List<Product> items) {
-        this.items = items;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
     }
 
     private double calculateTotal(){
@@ -63,11 +47,34 @@ public class Order {
     }
 
     public void showOrderSummary() {
-        System.out.println("Order Summary:");
-        for (Product product : items) {
-            product.getProductType();
-            product.displayBasicInfo();
+        System.out.println("\n══════════════════════════════════════════");
+        System.out.println("          Order: " + orderId);
+        System.out.println("Customer: " + customer.getName() +
+                " (" + (customer.isPremium() ? "Premium" : "Regular") + ")");
+        System.out.println("──────────────────────────────────────────");
+        System.out.println("Items:");
+
+        int index = 1;
+        for (Product p : items) {
+            System.out.printf("  %2d. %-30s (%-12s) $%6.2f%n",
+                    index++, p.getTitle(), p.getProductType(), p.getPrice());
+
         }
+
+        System.out.println("──────────────────────────────────────────");
+        System.out.printf("Total: $%.2f%n", totalPrice);
+        System.out.println("Delivery: " + getDeliveryInfo());
+        System.out.println("Free Shipping: " + (customer.wantsFreeShipping() ? "YES" : "NO"));
+        System.out.println("══════════════════════════════════════════");
+    }
+
+    private String getDeliveryInfo() {
+        if (items.isEmpty()) return "No items";
+        String deliveryInfo = "";
+      for(Product p:items){
+          deliveryInfo = p.getDeliveryInfo();
+      }
+      return deliveryInfo;
     }
 
 

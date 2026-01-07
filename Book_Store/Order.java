@@ -3,21 +3,21 @@ package Book_Store;
 
 import Book_Store.products.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
 
     private String orderId;
     private Customer customer;
-
     private List<Product> items;
     private double totalPrice;
 
-    public Order(String orderId, Customer customer, List<Product> items, double totalPrice) {
+    public Order(String orderId, Customer customer, double totalPrice,List<Product> items) {
         this.orderId = orderId;
         this.customer = customer;
-        this.items = items;
-        this.totalPrice = totalPrice;
+        this.items = new ArrayList<>(items);
+        this.totalPrice = calculateTotal();
     }
 
     public String getOrderId() {
@@ -50,6 +50,16 @@ public class Order {
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    private double calculateTotal(){
+
+        double sum = 0;
+        for (Product p:items){
+            sum += p.getPrice();
+        }
+        return  sum;
+
     }
 
     public void showOrderSummary() {

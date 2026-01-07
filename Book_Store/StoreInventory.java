@@ -7,13 +7,17 @@ import java.util.List;
 
 public class StoreInventory {
 
-    private List<Product> avaliableProducts;
-    static int MAX_PRODUCTS = 100;
+    private List<Product> availableProducts;
+     public static final int MAX_PRODUCTS = 100;
+
+    public StoreInventory(){
+        this.availableProducts = new ArrayList<>();
+    }
 
     public void addProduct(Product p) {
 
-        if ( avaliableProducts.size() < MAX_PRODUCTS ) {
-            avaliableProducts.add(p);
+        if ( availableProducts.size() < MAX_PRODUCTS ) {
+            availableProducts.add(p);
         } else {
             System.out.println("Inventory in full");
         }
@@ -25,7 +29,7 @@ public class StoreInventory {
             return null;
         }
 
-        for (Product product:avaliableProducts){
+        for (Product product:availableProducts){
             if (isbn.equals(product.getIsbn())){
                 return product;
             }
@@ -35,7 +39,7 @@ public class StoreInventory {
 
     public void showAllProducts(){
         System.out.println("\n=== All Products in Store ===\n");
-        for (Product product:avaliableProducts){
+        for (Product product:availableProducts){
             product.displayBasicInfo();
             System.out.println("Type: " + product.getProductType());
             System.out.println("Delivery: " + product.getDeliveryInfo());
@@ -45,8 +49,8 @@ public class StoreInventory {
 
     }
 
-    public List<Product> getAvaliableProducts(){
-        return new ArrayList<>(avaliableProducts);
+    public List<Product> getAvailableProducts(){
+        return new ArrayList<>(availableProducts);
     }
 
 

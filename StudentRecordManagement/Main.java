@@ -26,7 +26,7 @@ public class Main {
                     String name = input.nextLine();
                     record = new Record(name,idNumber,contactNumber);
                     hr.add(record);
-                    System.out.println(record);
+                    System.out.println(record.toString());
                     break;
                 case 2:
                     System.out.println("What is the Student id number ? ");
@@ -57,7 +57,7 @@ public class Main {
                     System.out.println("\nThank you using the program. Goodbye!\n");
                     break;
             }
-        } while (true);
+        } while (option != 9);
 
 
     }

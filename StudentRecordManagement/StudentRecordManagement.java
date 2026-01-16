@@ -11,7 +11,7 @@ public class StudentRecordManagement {
     }
 
     public void add(Record record) {
-        if (find(record.getIdNumber())) {
+        if (!find(record.getIdNumber())) {
             list.add(record);
         } else {
             System.out.println("Record already exits in the Record list");
@@ -62,9 +62,9 @@ public class StudentRecordManagement {
             System.out.println("What is the new Student id Number ? ");
             int idNumber = input.nextInt();
 
-            System.out.println("What is the new Student id Number ?");
+            System.out.println("What is the new contactNumber ?");
             int contactNumber = input.nextInt();
-            input.nextInt();
+            input.nextLine();
 
             System.out.println("What is the new Student Name ? ");
             String name = input.nextLine();

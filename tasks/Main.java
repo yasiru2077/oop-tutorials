@@ -50,6 +50,6 @@ public class Main {
 
     }
 
-
+//    jms, jca, jta, jdbc
 
 }

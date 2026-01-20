@@ -1,6 +1,5 @@
 package tasks;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -42,12 +41,12 @@ public class TaskManager {
         System.out.println("Task deleted.");
     }
 
-    public void update(int id){
+    public void update(int id) {
         Scanner scanner = new Scanner(System.in);
 
-        for (Task t:tasks){
-            if (t.getId() == id){
-                System.out.println(t.getId()+" "+t.getTaskType()+" "+t.getTitle());
+        for (int i = 0; i < tasks.size(); i++) {
+            Task t = tasks.get(i);
+            if (t.getId() == id) {
                 System.out.println("What is the typ of this typ ? ");
                 int type = scanner.nextInt();
                 System.out.println("is it completed");
@@ -55,9 +54,8 @@ public class TaskManager {
                 scanner.nextLine();
                 System.out.println("What is the title");
                 String title = scanner.nextLine();
-                Task updatedTask = (type == 1) ? new WorkTask(t.getId(),title,isCompeleted) : new PersonalTask(t.getId(),title,isCompeleted);
-                tasks.add(updatedTask);
-                System.out.println(updatedTask);
+                Task updatedTask = (type == 1) ? new WorkTask(t.getId(), title, isCompeleted) : new PersonalTask(t.getId(), title, isCompeleted);
+                tasks.set(i, updatedTask);
                 System.out.println("Task updated.");
 
             }

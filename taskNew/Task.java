@@ -1,4 +1,4 @@
-package tasks;
+package taskNew;
 
 public abstract class Task {
     private int id;
@@ -25,20 +25,18 @@ public abstract class Task {
         return isCompleted;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCompleted(boolean completed) {
+        this.isCompleted = completed;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setCompleted(boolean isCompleted) {
-        this.isCompleted = isCompleted;
-    }
-
     @Override
     public String toString() {
         return "[" + (isCompleted ? "X" : " ") + "] ID: " + id + " | " + getTaskType() + ": " + title;
     }
+
+
 }
